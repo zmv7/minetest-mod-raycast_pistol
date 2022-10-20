@@ -20,15 +20,15 @@ local shoot = function(itemstack, player)
 					full_punch_interval = 1.0,
 					damage_groups = {fleshy = 10},
 				}, nil)
-                break
-            end
-        end
-    end
-    meta:set_string("count_meta",tostring(ammo-1))
-    if not creative then
+				break
+			end
+		end
+	end
+	meta:set_string("count_meta",tostring(ammo-1))
+	if not creative then
 		itemstack:add_wear(256)
-    end
-    core.sound_play("player_damage", {to_player=name})
+	end
+	core.sound_play("player_damage", {to_player=name})
 	return itemstack
 end
 
