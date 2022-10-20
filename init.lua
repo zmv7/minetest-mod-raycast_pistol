@@ -96,7 +96,7 @@ core.register_craft({
 	output = "raycast_pistol:magazine_full",
 	recipe = {
 		{"raycast_pistol:bullet","raycast_pistol:bullet","raycast_pistol:bullet"},
-		{"raycast_pistol:bullet","","raycast_pistol:bullet"},
+		{"raycast_pistol:bullet","raycast_pistol:magazine","raycast_pistol:bullet"},
 		{"raycast_pistol:bullet","raycast_pistol:bullet","raycast_pistol:bullet"}
 	}
 })
