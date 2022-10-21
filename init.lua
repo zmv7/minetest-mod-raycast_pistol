@@ -23,6 +23,18 @@ local shoot = function(itemstack, player)
 				break
 			end
 		end
+		if pointed_thing.type == "node" then
+			local shift = pointed_thing.under - pointed_thing.above
+			core.add_particle({
+				pos = pointed_thing.above + shift*0.49,
+				expirationtime = 0.2,
+				size = 1,
+				collisiondetection = false,
+				vertical = false,
+				texture = "tnt_boom.png",
+				glow = 15})
+			break
+		end
 	end
 	meta:set_string("count_meta",tostring(ammo-1))
 	if not creative then
