@@ -24,9 +24,8 @@ local shoot = function(itemstack, player)
 			end
 		end
 		if pointed_thing.type == "node" then
-			local shift = pointed_thing.under - pointed_thing.above
 			core.add_particle({
-				pos = pointed_thing.above + shift*0.49,
+				pos = pointed_thing.intersection_point,
 				expirationtime = 0.2,
 				size = 1,
 				collisiondetection = false,
@@ -37,6 +36,7 @@ local shoot = function(itemstack, player)
 		end
 	end
 	meta:set_string("count_meta",tostring(ammo-1))
+	meta:set_string("description","Raycast Pistol ("..tostring(ammo-1).."/8)")
 	if not creative then
 		itemstack:add_wear(256)
 	end
@@ -55,6 +55,7 @@ local reload = function(itemstack, player)
 			inv:add_item("main", "raycast_pistol:magazine")
 		end
 		meta:set_string("count_meta", "8")
+		meta:set_string("description","Raycast Pistol (8/8)")
 	end
 	return itemstack
 end
